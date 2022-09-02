@@ -1,0 +1,113 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donate TEST-DONATION CHARITY</title>
+    <meta name="author" content="CrypDonate.Charity">
+    <meta name="description" content="Donate TEST-DONATION CHARITY">
+    <link rel="icon" href="favicon.png">
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="donate.js"></script>
+    <link href="modal-style.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="poppins/poppins-font.css" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript">
+        charityID = 'z3Teest734kl';
+        charityTitle = 'TEST-DONATION CHARITY';
+        eurUsdRate = 0.99898339283804;
+    </script>
+    <div class="wrapper">
+        <div class="background"></div>
+        <div class="top-section">
+            <h3>TEST-DONATION CHARITY</h3>
+        </div>
+        <div class="body-section">
+            <div id="info" style="display: none;">
+                <h2 id="info-msg" align="center">info_template</h2>
+            </div>
+            <div id="warning" style="display: none;">
+                <h2 id="warning-msg" align="center">warning_template</h2>
+            </div>
+            <div id="error" style="display: none;">
+                <h2 id="error-msg" align="center">error_template</h2>
+            </div>
+            <div id="loading" class="loading-section" style="display: none;">
+                <div class="loading-box">
+                    <img src="loading.gif">
+                </div>
+                <span id="loading-msg">checking wallets..</span>
+            </div>
+            <div id="content" style="">
+                <div>
+                    <strong class="margin-7">Which coin you like to donate?</strong>
+                    <br>In Q1 2023, more coins will follow and minimum limits will no longer apply.
+                </div>
+                <ul class="icon-box">
+                    <li>
+                        <a href="javascript:select_token('BTC', 20059.77813885378427714589477, 0.0002466, 2.5);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/btc.png"></div>
+                            <div class="icon-box-text">Bitcoin<br>min. 0.0002466</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('ETH', 1475.651016485522537849406127, 0.071, 48.61047902);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/eth.png"></div>
+                            <div class="icon-box-text">Ethereum<br>min. 0.071</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('LTC', 55.31683269092051634944307013, 0.02, 800);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/ltc.png"></div>
+                            <div class="icon-box-text">Litecoin<br>min. 0.02</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('BCY', 1.0E+6, 0, 2.5);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/bcy.png"></div>
+                            <div class="icon-box-text">Bitcoin Blockcypher<br>min. 0</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('DASH', 46.22079163736461063489572705, 0.02, 800);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/dash.png">
+                            </div>
+                            <div class="icon-box-text">Dash<br>min. 0.02</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('XRP', 0.3186117804348088595358227810, 320, 200000);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/xrp.png"></div>
+                            <div class="icon-box-text">Ripple<br>min. 320</div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/xlm.png"></div>
+                        <div class="icon-box-text">Stellar<br>inactive for a moment</div>
+                    </li>
+                    <li>
+                        <a href="javascript:select_token('NIM', 0.001206580000052317308802268479, 828.79, 23000000);">
+                            <div class="icon-box-img"><img src="https://basics.crypdonate.charity/tokens/nim.png"></div>
+                            <div class="icon-box-text">Nimiq<br>min. 828.79</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+                <div class="full-row"><button class="btn-green tokens-button"
+                        onclick="refresh_tokens()">Refresh</button></div>
+                <div class="full-row" style="visibility:hidden"><button class="btn-green tokens-button"
+                    onclick="show_tokens()">Show All</button></div>
+                </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
