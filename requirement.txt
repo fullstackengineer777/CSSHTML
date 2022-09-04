@@ -1,0 +1,25 @@
+step_3_coinlist:
+only in full-screen there are 3 colums - while 3 should be possible also in popup-size and on tablets
+we addet a secon Text-line and the Text is not centered anymore
+it should be centered vertically with 1, 2 and 3 lines of Text
+and as you see @Stellar on the left bottom, when I add some text a linebreak happenes
+
+
+step_4_donate:	
+the 2 red Blocks on the right should always be centered vertically
+the Text-Block can have 2 or 4 Lines of text
+and when one line is longer then the current Line Nr.4 also a LineBreak happenes while there is space left
+the left Block with Coin-Icon, Coin-Name and 'Change-Token' can have a static sice aslong '	' or 'Ethereum' fit into
+and as you see in scrrenshot #3 vertical center is our main problem
+the little blue info-i should popup it's text also on mobile devices and should be in vertical center to the text-line
+and screenshot #4, the fields email and message should end on same height
+
+step_5_donated
+the content left and right of the wr-code need to be in vertical center
+woth have dynamic content, text can be one to fifle lines each
+	
+step_6_donated_success
+using the css-classes success-box, success-left and success-right the right image is not centered horizontal
+
+step_7_donated_error_1:
+the retry-button could have a static width and be centered horizontal

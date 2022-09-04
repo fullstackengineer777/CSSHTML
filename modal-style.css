@@ -87,7 +87,6 @@ select { color: #666; }
 .large-text { font-size: 20px; }
 
 .full-width { width: 100%; }
-
 .magin-2 { margin: 2px 0px; }
 .padding-5 {padding: 5px;}
 .padding-right-5 {padding-right: 5px;}
@@ -113,18 +112,24 @@ background: linear-gradient(39deg, rgba(255,180,20,1) 0%, rgba(255,255,255,1) 10
 .tick-list img {  position: relative;  bottom: -2px; margin-right: 8px; }
 
 
-.icon-box { padding-left: 0px;  margin: 30px 0px; }
-.icon-box li { width: 30%; margin-bottom: 15px; margin-right: 15px; background: #ebebeb; float: left; 
-	border-radius: 10px; padding: 10px;   }
-	.icon-box li:hover { background: #f1f1f1; }
-	.icon-box li a {display: flex; color: #707070; text-decoration: none;}
+.icon-box { padding-left: 0px;  margin: 30px 0px;  display: grid; grid-template-columns: repeat(3,1fr);}
+.icon-box li {  margin-bottom: 15px; margin-right: 15px; background: #ebebeb; border-radius: 10px; padding: 10px;   }
+.icon-box li:hover { background: #f1f1f1; }
+.icon-box li a {display: flex; align-items: center; color: #707070; text-decoration: none;}
 .icon-box-img { width: 64px; }
 .icon-box-img img { display: block; }
-.icon-box-text { padding-left: 15px; padding-top: 5px; font-weight: bold;
+.icon-box-text { padding-left: 15px; padding-top: 0px; font-weight: bold;
     font-size: 17px; }
 
 .coin-details-top { width: 100%; display: flex; }
-.coin-details-top-left {  width: 50%; background: #ebebeb; border-radius: 10px; margin: 5px; /*display: flex;*/ padding: 10px;  }
+.coin-details-top-left {  width: 50%; background: #ebebeb; border-radius: 10px; margin: 5px; display: flex;align-items: center; justify-content: space-between;padding: 10px;  }
+.coin-details-top-left .text-right p{
+	margin: 0px;
+}
+.coin-details-top-left .text-right div{
+	display: flex;
+	align-items: center;
+}
 .coin-details-top-right {  width: 50%; background: #ebebeb; border-radius: 10px; margin: 5px; 
 	display: flex; padding: 13px 10px 10px 10px; }
 .coin-icon-box-img { width: 64px; }
@@ -134,7 +139,20 @@ background: linear-gradient(39deg, rgba(255,180,20,1) 0%, rgba(255,255,255,1) 10
 .coin-icon-box-text a { color: #ff9605; text-decoration: underline; font-size: 12px; }
 .coin-icon-box-text a:hover { text-decoration: none; }
 
-.width-33 { float: left; width: 33.33%; }
+.width-33, .width-33-right,.width-33-left { float: left; width: 33.33%; }
+.width-33-right{
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+}
+.width-33-left{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.width-33-left p{
+	margin: 0px;
+}
 .width-40 { float: left; width: 40%; }
 .width-50 { float: left; width: 50%; }
 .width-60 { float: left; width: 60%; }
@@ -189,22 +207,28 @@ background: linear-gradient(39deg, rgba(255,180,20,1) 0%, rgba(255,255,255,1) 10
  .bg-gradient { background: rgb(235,235,235);
 background: linear-gradient(180deg, rgba(235,235,235,1) 0%, rgba(255,255,255,0) 100%) !important; }
 
-.crypto-logo-pad { padding-top: 50px; }
+
 .show-data { font-size: 13px; }
 .word-brak {word-break: break-all;}
 
 .accept-text {display: none; color: #ff0000; padding: 10px;}
 
-.box-four-left { width: 150px; float: left; display: flex;  padding-top: 9px; }
+.box-four-left { width: 150px; float: left; display: flex;}
 .box-four-right { float: right; }
 
 
 .success-box { display: flex; padding-bottom: 20px; }
 .success-left { width:50%; text-align: center; }
-.success-right { width:50%; text-align: center; display: flex; vertical-align: middle; align-items: center; }
-/*.success-left img { width:250px; } */
+.success-right { width:100%; text-align: center; display: flex; justify-content: space-evenly;align-items: center;}
 
 
+.success-retry-section{
+	display: flex;
+	justify-content: center;
+}
+#btn-redonate{
+	width: 20%;
+}
 /* ================= Responsive ====================== */
 
 
@@ -218,32 +242,53 @@ background: linear-gradient(180deg, rgba(235,235,235,1) 0%, rgba(255,255,255,0) 
 .coin-icon-box-text { padding-top: 0px; padding-left: 3px; }
 .top-marg-small { margin-top: 5px; }
 
-}
 
+}
 
 @media only screen and (max-width : 735px) {
 .coin-details-top { display: block; }
-.coin-details-top-left { width: 93%; margin: 0 auto 10px; display: flex;  }
+.coin-details-top-left { width: 93%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: space-between;}
+.coin-details-top-left .text-right p{
+	margin: 0px;
+}
+.coin-details-top-left .text-right div{
+	display: flex;
+	align-items: center;
+}
 .coin-details-top-right { width: 93%; margin: 0 auto 10px; padding: 10px 10px 10px 10px; }
 .coin-details-bottom { display: block; }
 .coin-details-bottom-left, .coin-details-bottom-middle, .coin-details-bottom-right { width: 93%; 
 	margin: 0 auto 10px; }
-.icon-box li {  width: 95%;}
+/*.icon-box li {  width: 95%;}*/
 
 .padding-right-5 {padding: 0px;}
 
 .button-bg-grey-box { width: auto; }
 .width-100 { float: left; width: 98%; }
-.width-33, .width-40, .width-50,.width-60 { float: left; width: 100%; }
+.width-33, .width-33-right, .width-40, .width-50,.width-60 ,.width-33-left{ float: left; width: 100%; }
+
 .display-flex { display: block; }
 .mobile-pad-10 { padding-top: 0px; }
 
-.crypto-logo-pad { padding-top: 10px; }
+
 
 .mobile-width-50 { width: 50%; }
 .accept-text { padding: 10px 0px;}
 
 .mobile-width-50 { width: 100%; }
+
+
+.icon-box li {  
+	margin-bottom: 15px; 
+	margin-right: 15px; 
+	border-radius: 8px; 
+	padding: 5px;   
+}
+.icon-box li a {display: flex; align-items: center; color: #707070; text-decoration: none;}
+.icon-box-img { width: 64px;}
+.icon-box-img img { display: block;}
+.icon-box-text { padding-left: 5px; padding-top: 0px; font-weight: bold;
+    font-size: 14px; }
 
 } /* end */
 
