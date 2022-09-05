@@ -74,9 +74,11 @@
                                 <div class="text-right">
                                     <p id="textEst">1 BTC = 19861.37 EUR<br>1 BTC = 19841.18 USD<br>total EUR =
                                         3972.27<br>  </p>
-                                        <div><img src="info-icon.png"
-                                                title="CrypDonate works 100% non-profit. Only an unavoidable 1.5% exchange fee from our exchange partner will be deducted from your donation. CrypDonate takes nothing for itself. Read more on 'How we proceed donations' on our About-Page.">&nbsp;exchange
-                                            fee 59.58 EUR
+                                        <div>
+                                            <div class="tooltip">
+                                                <img src="info-icon.png">
+                                                <span class="tooltiptext">CrypDonate works 100% non-profit. Only an unavoidable 1.5% exchange fee from our exchange partner will be deducted from your donation. CrypDonate takes nothing for itself. Read more on 'How we proceed donations' on our About-Page.</span>
+                                            </div>&nbsp;exchange fee 59.58 EUR
                                         </div>
                                   
                                     <p id="message-error"></p>
@@ -118,14 +120,14 @@
 
                     <div class="coin-details-bottom">
                         <div class="display-flex">
-                            <div class="coin-details-bottom-right bg-gradient">
+                            <div class="coin-details-bottom-right bg-gradient" style="margin-bottom: 0px;">
                                 <div class="width-100">
                                     <p><strong>Optional Information</strong> (will be forwardet to the Charity)</p>
 
                                 </div>
 
                                 <div class="width-100" id="check-form-1">
-                                    <div class="display-flex">
+                                    <div class="display-flex-middle">
                                         <div class="width-50 padding-5">
                                             <div class="check-form">
                                                 <div class="form-section"><input type="text" class="form-box magin-2"
@@ -154,8 +156,8 @@
                             </div>
                         </div>
 
-                        <div class="display-flex">
-                            <div class="coin-details-bottom-right bg-gradient">
+                        <div class="display-flex" >
+                            <div class="coin-details-bottom-right bg-gradient" style="margin-top: 0px;">
                                 <div class="width-100 ">
                                     <p><input type="checkbox" id="need_receipt" name="need_receipt"
                                             onclick="need_receipt_check()"><span class="small-text">I need a

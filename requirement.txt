@@ -23,3 +23,5 @@ using the css-classes success-box, success-left and success-right the right imag
 
 step_7_donated_error_1:
 the retry-button could have a static width and be centered horizontal
+
+@mario_neurater
