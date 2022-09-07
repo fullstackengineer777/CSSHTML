@@ -1,0 +1,39 @@
+<html>
+    <head>
+    <script type="text/javascript">
+        function showDonatePopup(id)
+        {
+            popupCenter(id, 'Dev-Popup', 900, 500); 
+        }
+        function popupCenter (url, title, w, h) {
+            // Fixes dual-screen position                            Most browsers       Firefox
+            const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+            const dualScreenTop = window.screenTop !== undefined   ? window.screenTop  : window.screenY;
+    
+            const width = screen.width;
+            const height = screen.height;
+    
+            const systemZoom = 1;//width / window.screen.availWidth;
+            const left = (width - w) / 2 / systemZoom + dualScreenLeft
+            const top = (height - h) / 2 / systemZoom + dualScreenTop
+            const newWindow = window.open(url, title, 
+              `
+              scrollbars=yes,
+              width=${w / systemZoom}, 
+              height=${h / systemZoom}, 
+              top=${top}, 
+              left=${left}
+              `
+            )
+    
+            if (window.focus) newWindow.focus();
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:showDonatePopup('step_4_donate.html');">step_4_donate.html</a><br/>
+    <br/>    
+
+    <a href="javascript:showDonatePopup('https://securesand.crypdonate.charity/donate.php?id=z3Teest734kl&title=TEST-DONATION CHARITY');">real popup</a><br/>
+</body>
+</html>

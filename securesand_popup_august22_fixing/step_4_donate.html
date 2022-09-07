@@ -1,0 +1,298 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donate Sadhana Forest</title>
+    <meta name="author" content="CrypDonate.Charity">
+    <meta name="description" content="Donate Sadhana Forest">
+    <link rel="icon" href="https://basics.crypdonate.charity/favicon.png">
+    <script type="text/javascript" src="https://basics.crypdonate.charity/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="donate.js?331"></script>
+    <link href="style.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="poppins/poppins-font.css" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript">
+        charityID = '73def2ad';
+        charityTitle = 'Sadhana Forest';
+        eurUsdRate = 0.99565241838083;
+    </script>
+    <div class="wrapper">
+        <div class="background"></div>
+        <div class="top-section">
+            <h3>Sadhana Forest</h3>
+        </div>
+        <div class="body-section">
+            <div id="info" style="display: none;">
+                <h2 id="info-msg" align="center">info_template</h2>
+            </div>
+            <div id="warning" style="display: none;">
+                <h2 id="warning-msg" align="center">warning_template</h2>
+            </div>
+            <div id="error" style="display: none;">
+                <h2 id="error-msg" align="center">error_template</h2>
+            </div>
+            <div id="loading" class="loading-section" style="display: none;">
+                <div class="loading-box">
+                    <img src="loading.gif">
+                </div>
+                <span id="loading-msg">prepare donation</span>
+            </div>
+            <div id="content" style="">
+                <form id="frDonate">
+
+                    <div class="coin-details-top">
+
+                        <div class="coin-details-top-right">
+                            <div class="coin-details-top-amount-left">Amount:</div>
+                            <div class="coin-details-top-amount-middle">
+                                <div class="form-section"><input type="text" id="amount" name="amount"
+                                        class="form-box text-large-bold text-center" placeholder="0.01"
+                                        oninput="amount_changed()" autocomplete="off" value=""
+                                        style="border: 1px solid rgb(215, 215, 215);"></div>
+                                <div id="estimated" class="estimated-box">donation amount<br>18677.23 EUR</div>
+                            </div>
+                            <div class="coin-details-top-amount-right">BTC</div>
+                        </div>
+
+                        <div class="coin-details-top-left">
+                            <div class="box-four-left">
+                                <div class="coin-icon-box-img"><img
+                                        src="https://basics.crypdonate.charity/tokens/btc.png"></div>
+                                <div class="coin-icon-box-text">
+                                    <p>Bitcoin</p>
+                                    <a href="javascript:change_token();" class="top-marg-small-old">Change Token</a>
+                                </div>
+                            </div>
+                            <div class="box-four-right show-data">
+                                <div class="text-right">
+                                    <p id="textEst">1 BTC = 18961.66 EUR<br>1 BTC = 18879.22 USD<br>total EUR =
+                                        18961.66<br></p>
+                                    <div id="textFee">
+                                        <div class="tooltip"><span class="tooltiptext">CrypDonate works 100% non-profit.
+                                                Only an unavoidable 1.5% exchange fee from our exchange partner will be
+                                                deducted from your donation. CrypDonate takes nothing for itself. Read
+                                                more on 'How we proceed donations' on our About-Page.</span><a
+                                                class="exchangefee" href="#">exchange fee</a>&nbsp;284.42 EUR</div>
+                                    </div>
+                                </div>
+
+                                <div class="coin-details-bottom-left-hidden">
+                                    <div class="form-section"><input type="hidden" id="token" name="token"
+                                            class="form-box-border" placeholder="--" value="BTC"></div>
+                                    <div class="form-section"><input type="hidden" id="EstRate" name="EstRate"
+                                            class="form-box-border" placeholder="--" value="18961.65952444158"></div>
+                                    <div class="form-section"><input type="hidden" id="estTotal" name="estTotal"
+                                            class="form-box-border" placeholder="--" value="18961.65952444158"></div>
+                                    <div class="form-section"><input type="hidden" id="estFee" name="estFee"
+                                            class="form-box-border" placeholder="--" value="1.5"></div>
+                                    <div class="form-section"><input type="hidden" id="estFeeAmount" name="estFeeAmount"
+                                            class="form-box-border" placeholder="--" value="284.4248928666237"></div>
+                                    <div class="form-section"><input type="hidden" id="estNetto" name="estNetto"
+                                            class="form-box-border" placeholder="--" value="18677.234631574956"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="display-flex">
+                        <div class="button-bg-grey-box no-bg">
+                            <button type="submit" class="btn-green full-width" id="btn-donate">Donate</button>
+                        </div>
+                        <div class="button-bg-grey-box no-bg">
+                            <p id="10kinfo" style="color: rgb(255, 0, 0); font-weight: bold; line-height: 1.3;">If you
+                                donate more than ten thousand euros to a single charity, a KYC and Proof-of-Funds
+                                process is needed!</p>
+
+                        </div>
+                    </div>
+
+                    <div class="coin-details-bottom">
+                        <div class="display-flex">
+                            <div class="coin-details-bottom-right bg-gradient" style="margin-bottom: 0px;">
+                                <div class="width-100">
+                                    <p><strong>Optional Information</strong> (will be forwardet to the Charity)</p>
+
+                                </div>
+
+                                <div class="width-100" id="check-form-1">
+                                    <div class="display-flex-middle">
+                                        <div class="width-50 padding-5">
+                                            <div class="check-form">
+                                                <div class="form-section"><input type="text" class="form-box magin-2"
+                                                        id="name_short" name="name_short" placeholder="name" value="">
+                                                </div>
+                                                <p style="margin-top: 10px;"><input type="checkbox" id="public_donate"
+                                                        name="public_donate"><span class="small-text">show my name on
+                                                        public donation-list</span> </p>
+
+                                                <div class="form-section">
+                                                    <input type="text" class="form-box magin-2" id="email_short"
+                                                        name="email_short" placeholder="email" value="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="width-50 padding-5">
+                                            <div class="form-section">
+                                                <textarea id="message" class="form-box-textarea"
+                                                    placeholder="message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <div class="display-flex">
+                            <div class="coin-details-bottom-right bg-gradient" style="margin-top: 0px;">
+                                <div class="width-100 ">
+                                    <p><input type="checkbox" id="need_receipt" name="need_receipt"
+                                            onclick="need_receipt_check()"><span class="small-text">I need a
+                                            receipt</span></p>
+                                </div>
+                                <div class="width-100" id="check-form-2" style="display: none;">
+                                    <div class="form-section padding-5" id="entity_div"><input type="text"
+                                            class="form-box magin-2" id="company" name="company"
+                                            placeholder="company name (optional)" value="" onkeyup="func_check_all()">
+                                    </div>
+
+                                    <div class="display-flex">
+                                        <div class="width-50 padding-5">
+                                            <div class="check-form">
+                                                <div class="form-section"><input type="text" class="form-box magin-2"
+                                                        id="name" name="name" placeholder="first name" value=""
+                                                        onkeyup="func_check_all()"></div>
+
+                                                <div class="form-section">
+                                                    <input type="text" class="form-box magin-2" id="surname"
+                                                        name="surname" placeholder="surname" value=""
+                                                        onkeyup="func_check_all()">
+                                                </div>
+
+                                                <div class="form-section"><input type="text" class="form-box magin-2"
+                                                        id="email" name="email" placeholder="email" value=""
+                                                        onkeyup="func_check_all()"></div>
+                                            </div>
+                                        </div>
+                                        <div class="width-50 padding-5">
+                                            <div class="form-section"><input type="text" class="form-box magin-2"
+                                                    id="street" name="street" placeholder="street" value=""
+                                                    onkeyup="func_check_all()"></div>
+                                            <div class="display-flex">
+                                                <div class="width-40 padding-right-5">
+                                                    <div class="form-section"><input type="text"
+                                                            class="form-box magin-2" id="zip" name="zip"
+                                                            placeholder="zip code" value="" onkeyup="func_check_all()">
+                                                    </div>
+                                                </div>
+                                                <div class="width-60">
+                                                    <div class="form-section"><input type="text"
+                                                            class="form-box magin-2" id="city" name="city"
+                                                            placeholder="city" value="" onkeyup="func_check_all()">
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+
+                                            <div class="form-section"><select class="form-box magin-2" id="country"
+                                                    name="country">
+                                                    <option value="" selected="">Select Country</option>
+                                                    <option value="Afghanistan">Afghanistan</option>
+                                                    <option value="Albania">Albania</option>
+                                                    <option value="Algeria">Algeria</option>
+                                                    <option value="American Samoa">American Samoa</option>
+                                                    <option value="Andorra">Andorra</option>
+                                                    <option value="Angola">Angola</option>
+                                                    <option value="Anguilla">Anguilla</option>
+                                                    <option value="Antarctica">Antarctica</option>
+                                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                    <option value="Argentina">Argentina</option>
+                                                    <option value="Armenia">Armenia</option>
+                                                    <option value="Aruba">Aruba</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="Austria">Austria</option>
+                                                    <option value="Azerbaijan">Azerbaijan</option>
+                                                    <option value="Bahamas (the)">Bahamas (the)</option>
+                                                    <option value="Bahrain">Bahrain</option>
+                                                    <option value="Bangladesh">Bangladesh</option>
+                                                    <option value="Barbados">Barbados</option>
+                                                    <option value="Belarus">Belarus</option>
+                                                    <option value="Belgium">Belgium</option>
+                                                    <option value="Belize">Belize</option>
+                                                    <option value="Benin">Benin</option>
+                                                    <option value="Bermuda">Bermuda</option>
+                                                    <option value="Bhutan">Bhutan</option>
+                                                    <option value="Bolivia (Plurinational State of)">Bolivia
+                                                        (Plurinational State of)</option>
+                                                    <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint
+                                                        Eustatius and Saba</option>
+                                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
+                                                    </option>
+                                                    <option value="Botswana">Botswana</option>
+                                                    <option value="Bouvet Island">Bouvet Island</option>
+                                                    <option value="Brazil">Brazil</option>
+                                                    <option value="British Indian Ocean Territory (the)">British Indian
+                                                        Ocean Territory (the)</option>
+                                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                    <option value="Bulgaria">Bulgaria</option>
+                                                    <option value="Burkina Faso">Burkina Faso</option>
+                                                    <option value="Burundi">Burundi</option>
+                                                    <option value="Cabo Verde">Cabo Verde</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Cameroon">Cameroon</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="Cayman Islands (the)">Cayman Islands (the)</option>
+                                                    <option value="Central African Republic (the)">Central African
+                                                        Republic (the)</option>
+                                                    <option value="Chad">Chad</option>
+                                                    <option value="Chile">Chile</option>
+                                                    <option value="China">China</option>
+                                                    <option value="Christmas Island">Christmas Island</option>
+                                                    <option value="Cocos (Keeling) Islands (the)">Cocos (Keeling)
+                                                        Islands (the)</option>
+                                                    <option value="Colombia">Colombia</option>
+                                                    <option value="Comoros (the)">Comoros (the)</option>
+                                                    <option value="Congo (the Democratic Republic of the)">Congo (the
+                                                        Democratic Republic of the)</option>
+                                                    <option value="Congo (the)">Congo (the)</option>
+                                                    <option value="Cook Islands (the)">Cook Islands (the)</option>
+                                                    <option value="Costa Rica">Costa Rica</option>
+                                                    <option value="Croatia">Croatia</option>
+                                                    <option value="Cuba">Cuba</option>
+                                                    <option value="Curaçao">Curaçao</option>
+                                                    <option value="Cyprus">Cyprus</option>
+                                                    <option value="Czechia">Czechia</option>
+                                                    <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                                </select>
+                                            </div>
+                                            <p style="font-size: 13px;"><em>all the fields are required</em></p>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
